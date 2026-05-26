@@ -1,9 +1,16 @@
-function App() {
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import TaskDetail from "./pages/TaskDetail";
+import Navbar from "./layouts/Navbar";
+
+export default function App() {
   return (
-    <div>
-      <h1>TaskFlow</h1>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/task/:id" element={<TaskDetail />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
